@@ -1,14 +1,42 @@
 <!--views/articles/index.ejs-->
 <!DOCTYPE HTML>
 <html>
+<head>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
 <body>
-<h1>Article: <%= articleToDisplay.title %></h1>
+<a href="/site/../"><div class="header"></div></a>
+<div class="nav-bar">
+	<ul class="nav-bar">
+	<li>
+		<a href="about">About</a>
+	</li>
+	<li>
+		<a href="contact">Contact</a>
+	</li>
+	<li>
+		<a href="./articles">Go To Articles</a>
+	</li>
+	<li>
+		<a href="./articles/new">New Article</a>
+	</li>
+</div class="article">
+<h1>Article: <%= article.title %></h1>
 <div>
   <ul>
-  	<li>Author: <%= articleToDisplay.author  %></li>
-  	<li>Content: <%= articleToDisplay.content  %></li>
+  	<li>Author: <%= article.author  %></li>
+  	<li>Content: <%= article.content  %></li>
   </ul>
 </div>
+	<form action="/articles/<%= article.id %>/edit">
+		<button type="submit">Edit Article</button>
+	</form>
+	<form method="POST" action="/articles/<%= article.id %>?_method=DELETE">
+	    <button type="submit">Delete Article</button>
+	</form>
+
+	<a href="/articles">Go To Articles</a>
+
 </body>
 </html>
 

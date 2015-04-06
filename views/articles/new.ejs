@@ -2,15 +2,32 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-  </head>
-  <body>
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+<a href="/site/../"><div class="header"></div></a>
+<div class="nav-bar">
+  <ul class="nav-bar">
+  <li>
+    <a href="/about">About</a>
+  </li>
+  <li>
+    <a href="/contact">Contact</a>
+  </li>
+  <li>
+    <a href="/articles">Go To Articles</a>
+  </li>
+  <li>
+    <a href="#">New Article</a>
+  </li>
+</div>
     <h1>Add an article</h1>
-    <form method="post" action="/articles">
-      <input type="text" name="article[title]" placeholder="Article title"><br />
-      <input type="text" name="article[author]" placeholder="Article author"><br />
-      <textarea name="article[content]"></textarea><br />
-      <button>Save </button>
+    <form method="POST" action="/articles">
+      <input type="text" name="title" placeholder="Article title"><br />
+      <input type="text" name="author" placeholder="Article author"><br />
+      <textarea name="content"></textarea><br />
+      <button type="submit">Submit </button>
     </form>
   </body>
 </html>

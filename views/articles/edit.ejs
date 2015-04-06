@@ -2,17 +2,33 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-  </head>
-  <body>
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+<a href="/site/../"><div class="header"></div></a>
+<div class="nav-bar">
+  <ul class="nav-bar">
+  <li>
+    <a href="about">About</a>
+  </li>
+  <li>
+    <a href="contact">Contact</a>
+  </li>
+  <li>
+    <a href="./articles">Go To Articles</a>
+  </li>
+  <li>
+    <a href="./articles/new">New Article</a>
+  </li>
+</div>
     <h1>Add an article</h1>
-    <form method="post" action="/articles/<%= article.id %>?_method=PUT">
+    <form method="POST" action="/articles/<%= id %>?_method=POST">
       <input type="text" name="article[title]" placeholder="Article title" value="<%= article.title %>"><br />
       <input type="text" name="article[author]" placeholder="Article author" value="<%= article.author %>"><br />
-      <textarea name="article[content]">
-      	<%= article.content %>
+      <textarea name="article[content]"><%= article.content %>
       </textarea><br />
-      <button>Save </button>
+      <button type="submit">Save </button>
     </form>
   </body>
 </html>
